@@ -1,0 +1,11 @@
+#game-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+#rock,
+#paper,
+#scissors {
+  border-radius: 20px;
+  cursor: pointer;
+}
