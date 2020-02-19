@@ -1,5 +1,44 @@
+body {
+  background-color: #9797ff;
+  font-family: "Muli", sans-serif;
+}
+
+#title {
+  margin: auto;
+  text-align: center;
+  font-size: 3.2em;
+  margin-top: 1em;
+}
+
+#explanation-link {
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+
+#explanation-link:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+#choose-one-section,
+#results-section {
+  margin-top: 4em;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+#choose-one-text,
+#results-text {
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 2em;
+  text-align: center;
+}
+
 #game-images {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -8,4 +47,20 @@
 #scissors {
   border-radius: 20px;
   cursor: pointer;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+  box-shadow: 0 0 4px 4px yellow;
+}
+
+#player-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#player-results > h2 {
+  font-size: 1.5em;
 }

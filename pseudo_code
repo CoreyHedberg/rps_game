@@ -1,0 +1,10 @@
+function playerUser() {
+	// create a function to display the user information
+	// including formatting
+}
+
+function playerComputer() {
+	// create a function to display the user information
+	// including formatting
+}
+

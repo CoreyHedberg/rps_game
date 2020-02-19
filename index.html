@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="icon" href="media/favicon.png" />
+    <link rel="icon" href="media/favicon.ico" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Muli&display=swap"
@@ -16,18 +16,31 @@
 
     <script defer src="script.js"></script>
 
-    <title>Rock &bull; Paper &bull; Scissors</title>
+    <title>Rock &bull; Paper &bull; Scissors Game</title>
   </head>
 
   <body>
     <h1 id="title">Welcome to the Rock &bull; Paper &bull; Scissors Game</h1>
+    <a href="#" id="explanation-link"
+      ><h4>
+        Click to view an explanation of the game
+      </h4></a
+    >
 
     <section id="choose-one-section">
-      <h1>Choose one ...</h1>
+      <h1 id="choose-one-text"><em>Choose one to play ...</em></h1>
       <div id="game-images">
         <img src="media/rock.jpg" alt="Rock" id="rock" />
         <img src="media/paper.jpg" alt="Paper" id="paper" />
         <img src="media/scissors.jpg" alt="Scissors" id="scissors" />
+      </div>
+    </section>
+
+    <section id="results-section">
+      <h1 id="results-text"><em>The results are ...</em></h1>
+      <div id="player-results">
+        <h2><strong>User</strong></h2>
+        <h2><strong>Computer</strong></h2>
       </div>
     </section>
   </body>
