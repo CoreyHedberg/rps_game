@@ -1,9 +1,10 @@
 body {
-  background-color: #9797ff;
+  background-color: #3a517e;
   font-family: "Muli", sans-serif;
 }
 
 #title {
+  color: #ffffff;
   margin: auto;
   text-align: center;
   font-size: 3.2em;
@@ -13,11 +14,11 @@ body {
 #explanation-link {
   text-align: center;
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 #explanation-link:hover {
-  color: #fff;
+  color: yellow;
   cursor: pointer;
 }
 
@@ -63,4 +64,9 @@ body {
 
 #player-results > h2 {
   font-size: 1.5em;
+  color: #ffffff;
+}
+
+#user-choice {
+  border-radius: 20px;
 }
