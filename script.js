@@ -111,3 +111,12 @@ function computerChoice() {
   // For debugging purposes
   console.log(randomNumber);
 }
+
+// create a function for who won
+// take the number of the user chosen play and the random number from the computer play and compare them.
+
+/*
+let userWins = "The User wins!";
+let computerWins = "The Computer wins!";
+let itsATie = "It's a tie!";
+*/
