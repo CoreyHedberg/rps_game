@@ -6,7 +6,7 @@ Website game to play the classic rock-paper-scissors game.
 
 <br>
 
-Click [here](https://cheddrs.github.io/to_do_app/) to view it.
+Click [here](https://cheddrs.github.io/rps_game/) to view it.
 
 <br>
 
