@@ -1,4 +1,4 @@
-# Rock _ Paper _ Scissors Game
+# Rock - Paper - Scissors Game
 
 <br>
 
