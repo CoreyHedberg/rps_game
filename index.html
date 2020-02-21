@@ -21,11 +21,11 @@
 
   <body>
     <h1 id="title">Welcome to the Rock &bull; Paper &bull; Scissors Game</h1>
-    <a href="#" id="explanation-link"
-      ><h4>
-        Click to view an explanation of the game
-      </h4></a
-    >
+    <h4 id="explanation-text">
+      <a href="#rules-section" id="explanation-link"
+        >Click to view an explanation of the game</a
+      >
+    </h4>
 
     <section id="choose-one-section">
       <h1 id="choose-one-text"><em>Choose one to play ...</em></h1>
@@ -38,11 +38,16 @@
 
     <section id="results-section">
       <h1 id="results-text"><em>The results are ...</em></h1>
-      <div id="player-results">
-        <h2><strong>User</strong></h2>
-        <div id="insert-user-choice"></div>
-        <h2><strong>Computer</strong></h2>
+      <div id="player-results-text">
+        <h2 id="user-parent"><strong>User</strong></h2>
+        <h2 id="computer-parent"><strong>Computer</strong></h2>
       </div>
+      <div id="player-results"></div>
+    </section>
+
+    <section id="rules-section">
+      <h1 id="rules-text"><em>The explanation ...</em></h1>
+      <img src="media/explanation.svg" alt="Explanation" />
     </section>
   </body>
 </html>

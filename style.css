@@ -11,8 +11,11 @@ body {
   margin-top: 1em;
 }
 
-#explanation-link {
+#explanation-text {
   text-align: center;
+}
+
+#explanation-link {
   text-decoration: none;
   color: #fff;
 }
@@ -23,14 +26,20 @@ body {
 }
 
 #choose-one-section,
-#results-section {
+#results-section,
+#rules-section {
   margin-top: 4em;
   margin-left: 10em;
   margin-right: 10em;
 }
 
+#results-section {
+  /* margin-bottom: 20em; */
+}
+
 #choose-one-text,
-#results-text {
+#results-text,
+#rules-text {
   background-color: #ffffff;
   border-radius: 10px;
   font-size: 2em;
@@ -56,15 +65,25 @@ body {
   box-shadow: 0 0 4px 4px yellow;
 }
 
+#player-results-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#player-results-text > h2 {
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
 #player-results {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-#player-results > h2 {
-  font-size: 1.5em;
-  color: #ffffff;
+#rules-section {
+  text-align: center;
 }
 
 #user-choice {
