@@ -2,7 +2,7 @@
 
 <br>
 
-Website game to play the rock-paper-scissors game.
+Website game to play the classic rock-paper-scissors game.
 
 <br>
 
