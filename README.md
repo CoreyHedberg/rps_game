@@ -2,7 +2,7 @@
 
 <br>
 
-Play the classic game where you have a 33.333333333% chance to win every time.
+Play the classic game where you have a 33.333333333(you get the point)% chance to win every time.
 
 <br>
 

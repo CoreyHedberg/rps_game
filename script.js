@@ -42,6 +42,7 @@ function playerChoosesPaper() {
   userNumber = 2;
 
   computerChoice();
+  whoWon();
 
   // For debugging purposes : delete before submitting
   console.log("player chose paper");
@@ -60,6 +61,7 @@ function playerChoosesScissors() {
   userNumber = 3;
 
   computerChoice();
+  whoWon();
 
   // For debugging purposes : delete before submitting
   console.log("player chose scissors");
@@ -142,6 +144,19 @@ function whoWon() {
     (userNumber == 3 && computerNumber == 2)
   ) {
     userWins.style.border = "9px dashed yellow";
+  } else if (
+    (userNumber == 3 && computerNumber == 1) ||
+    (userNumber == 1 && computerNumber == 2) ||
+    (userNumber == 2 && computerNumber == 3)
+  ) {
+    computerWins.style.border = "9px dashed yellow";
+  } else if (
+    (userNumber == 1 && computerNumber == 1) ||
+    (userNumber == 2 && computerNumber == 2) ||
+    (userNumber == 3 && computerNumber == 3)
+  ) {
+    let tieText = document.getElementById("tie-text");
+    tieText.innerHTML = "Great minds think alike!";
   }
 }
 
