@@ -11,7 +11,14 @@ body {
   margin-top: 1em;
 }
 
-#explanation-text {
+#sub-title {
+  color: #ffffff;
+  margin: auto;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+#explanation-link-section {
   text-align: center;
 }
 
@@ -27,19 +34,20 @@ body {
 
 #choose-one-section,
 #results-section,
-#rules-section {
+#explanation-section {
   margin-top: 4em;
   margin-left: 10em;
   margin-right: 10em;
 }
 
 #results-section {
+  height: 28em;
   /* margin-bottom: 20em; */
 }
 
 #choose-one-text,
 #results-text,
-#rules-text {
+#explanation-text {
   background-color: #ffffff;
   border-radius: 10px;
   font-size: 2em;
@@ -82,10 +90,38 @@ body {
   justify-content: space-around;
 }
 
-#rules-section {
+#user-choice,
+#computer-choice {
+  border-radius: 20px;
+}
+
+#play-again-section {
+  text-align: center;
+}
+
+#play-again-button {
+  font-size: 2.25em;
+  background-color: #ffffff;
+  font-family: "Muli", sans-serif;
+  width: 400px;
+  height: 100px;
+  border: none;
+  border-radius: 20px;
+}
+
+#play-again-button:hover {
+  cursor: pointer;
+}
+
+#explanation-section {
   text-align: center;
 }
 
 #user-choice {
   border-radius: 20px;
+}
+
+.whoWon {
+  font-size: 2.5em;
+  font-weight: bold;
 }

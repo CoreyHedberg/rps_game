@@ -1,0 +1,1 @@
+1. create a flashing box shadow between the 3 game pieces when the page loads
