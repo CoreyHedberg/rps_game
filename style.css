@@ -41,7 +41,7 @@ body {
 }
 
 #results-section {
-  height: 28em;
+  height: 31em;
   /* margin-bottom: 20em; */
 }
 
@@ -121,15 +121,17 @@ body {
   border-radius: 20px;
 }
 
-.whoWon {
-  font-size: 2.5em;
-  font-weight: bold;
-}
-
 #player-results-text {
   border: 2px dashed yellow;
 }
 
 #player-results {
   border: 2px dashed red;
+}
+
+#tie-text {
+  text-align: center;
+  padding-top: 0.8em;
+  color: yellow;
+  font-size: 2.5em;
 }
