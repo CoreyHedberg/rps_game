@@ -125,11 +125,16 @@ function playAgain() {
   let childUserRemove = document.getElementById("user-choice");
   let parentComputerRemove = document.getElementById("player-results");
   let childComputerRemove = document.getElementById("computer-choice");
+  let tieTextParent = document.getElementById("tie-text-parent");
+  let tieTextChild = document.getElementById("tie-text-child");
   if (childUserRemove === null) {
     alert("Please play the game first.");
   } else {
     parentUserRemove.removeChild(childUserRemove);
     parentComputerRemove.removeChild(childComputerRemove);
+  }
+  if (tieTextChild !== null) {
+    tieTextParent.removeChild(tieTextChild);
   }
   console.clear();
 }
@@ -155,8 +160,12 @@ function whoWon() {
     (userNumber == 2 && computerNumber == 2) ||
     (userNumber == 3 && computerNumber == 3)
   ) {
-    let tieText = document.getElementById("tie-text");
-    tieText.innerHTML = "Great minds think alike!";
+    let displayTieText = document.getElementById("tie-text-parent");
+    let tieTextElement = document.createElement("p");
+    tieTextElement.setAttribute("id", "tie-text-child");
+    let tieText = document.createTextNode("Great minds think alike!");
+    displayTieText.appendChild(tieTextElement);
+    tieTextElement.appendChild(tieText);
   }
 }
 
