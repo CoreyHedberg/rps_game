@@ -2,7 +2,7 @@
 
 <br>
 
-Website game to play the classic rock-paper-scissors game.
+Play the classic game where you have a 33.333333333% chance to win every time.
 
 <br>
 
