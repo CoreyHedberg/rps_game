@@ -10,6 +10,10 @@ document
 // Global variables
 let userNumber = 0;
 let computerNumber = 0;
+let tieNumber = 0;
+let userWinTotal = 0;
+let computerWinTotal = 0;
+let tieTotal = 0;
 
 function playerChoosesRock() {
   let displayUserChoice = document.getElementById("player-results");
@@ -136,7 +140,6 @@ function playAgain() {
   if (tieTextChild !== null) {
     tieTextParent.removeChild(tieTextChild);
   }
-  console.clear();
 }
 
 function whoWon() {
@@ -149,12 +152,15 @@ function whoWon() {
     (userNumber == 3 && computerNumber == 2)
   ) {
     userWins.style.border = "9px dashed yellow";
+    userWinTotal++;
+    document.getElementById("user-win-total").innerHTML = userWinTotal;
   } else if (
     (userNumber == 3 && computerNumber == 1) ||
     (userNumber == 1 && computerNumber == 2) ||
     (userNumber == 2 && computerNumber == 3)
   ) {
     computerWins.style.border = "9px dashed yellow";
+    computerWinTotal++;
   } else if (
     (userNumber == 1 && computerNumber == 1) ||
     (userNumber == 2 && computerNumber == 2) ||
@@ -166,8 +172,12 @@ function whoWon() {
     let tieText = document.createTextNode("Great minds think alike!");
     displayTieText.appendChild(tieTextElement);
     tieTextElement.appendChild(tieText);
+    tieTotal++;
   }
 }
+
+document.getElementById("computer-win-total").innerHTML = computerWinTotal;
+document.getElementById("tie-total").innerHTML = tieTotal;
 
 // create a function for who won
 // take the number of the user chosen play and the random number from the computer play and compare them.

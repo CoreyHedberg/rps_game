@@ -34,7 +34,8 @@ body {
 
 #choose-one-section,
 #results-section,
-#explanation-section {
+#explanation-section,
+#scoreboard-section {
   margin-top: 4em;
   margin-left: 10em;
   margin-right: 10em;
@@ -47,7 +48,8 @@ body {
 
 #choose-one-text,
 #results-text,
-#explanation-text {
+#explanation-text,
+#scoreboard-text {
   background-color: #ffffff;
   border-radius: 10px;
   font-size: 2em;
