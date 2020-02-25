@@ -11,9 +11,13 @@ document
 let userNumber = 0;
 let computerNumber = 0;
 let tieNumber = 0;
-let userWinTotal = 0;
-let computerWinTotal = 0;
-let tieTotal = 0;
+var userWinTotal = 0;
+var computerWinTotal = 0;
+var tieTotal = 0;
+
+document.getElementById("user-win-total").innerHTML = userWinTotal;
+document.getElementById("computer-win-total").innerHTML = computerWinTotal;
+document.getElementById("tie-total").innerHTML = tieTotal;
 
 function playerChoosesRock() {
   let displayUserChoice = document.getElementById("player-results");
@@ -140,10 +144,11 @@ function playAgain() {
   if (tieTextChild !== null) {
     tieTextParent.removeChild(tieTextChild);
   }
+  // Used for debugging : remove before submitting
+  console.clear();
 }
 
 function whoWon() {
-  // create a function to compare the numbers for the user and computer to indicate who won
   let userWins = document.getElementById("user-choice");
   let computerWins = document.getElementById("computer-choice");
   if (
@@ -151,7 +156,7 @@ function whoWon() {
     (userNumber == 2 && computerNumber == 1) ||
     (userNumber == 3 && computerNumber == 2)
   ) {
-    userWins.style.border = "9px dashed yellow";
+    userWins.style.boxShadow = "0 0 6px 6px yellow";
     userWinTotal++;
     document.getElementById("user-win-total").innerHTML = userWinTotal;
   } else if (
@@ -159,8 +164,9 @@ function whoWon() {
     (userNumber == 1 && computerNumber == 2) ||
     (userNumber == 2 && computerNumber == 3)
   ) {
-    computerWins.style.border = "9px dashed yellow";
+    computerWins.style.boxShadow = "0 0 6px 6px yellow";
     computerWinTotal++;
+    document.getElementById("computer-win-total").innerHTML = computerWinTotal;
   } else if (
     (userNumber == 1 && computerNumber == 1) ||
     (userNumber == 2 && computerNumber == 2) ||
@@ -169,21 +175,23 @@ function whoWon() {
     let displayTieText = document.getElementById("tie-text-parent");
     let tieTextElement = document.createElement("p");
     tieTextElement.setAttribute("id", "tie-text-child");
-    let tieText = document.createTextNode("Great minds think alike!");
+    let tieText = document.createTextNode(`"Great minds think alike!"`);
     displayTieText.appendChild(tieTextElement);
     tieTextElement.appendChild(tieText);
     tieTotal++;
+    document.getElementById("tie-total").innerHTML = tieTotal;
   }
 }
 
-document.getElementById("computer-win-total").innerHTML = computerWinTotal;
-document.getElementById("tie-total").innerHTML = tieTotal;
+/* Post Image Links
+Rock : https://i.postimg.cc/wxSJXHSk/rock.jpg
 
-// create a function for who won
-// take the number of the user chosen play and the random number from the computer play and compare them.
+Paper
+https://i.postimg.cc/KcKB34sz/paper.jpg
 
-/*
-let userWins = "The User wins!";
-let computerWins = "The Computer wins!";
-let itsATie = "It's a tie!";
+Scissors
+https://i.postimg.cc/9z5WrLgG/scissors.jpg
+
+explanation
+https://i.postimg.cc/d1g7jmS0/explanation.png
 */

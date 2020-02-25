@@ -36,14 +36,13 @@ body {
 #results-section,
 #explanation-section,
 #scoreboard-section {
-  margin-top: 4em;
+  margin-top: 3em;
   margin-left: 10em;
   margin-right: 10em;
 }
 
 #results-section {
-  height: 31em;
-  /* margin-bottom: 20em; */
+  height: 26.5em;
 }
 
 #choose-one-text,
@@ -67,6 +66,7 @@ body {
 #scissors {
   border-radius: 20px;
   cursor: pointer;
+  align-self: center;
 }
 
 #rock:hover,
@@ -79,11 +79,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  font-size: 1.25em;
 }
 
-#player-results-text > h2 {
-  font-size: 1.5em;
+#user-parent,
+#computer-parent {
+  align-self: center;
+  font-size: 2em;
   color: #ffffff;
+  /* Used for illustration */
+  border: 2px dashed yellow;
 }
 
 #player-results {
@@ -94,6 +99,7 @@ body {
 
 #user-choice,
 #computer-choice {
+  align-self: center;
   border-radius: 20px;
 }
 
@@ -102,17 +108,18 @@ body {
 }
 
 #play-again-button {
-  font-size: 2.25em;
+  font-size: 2.5em;
   background-color: #ffffff;
   font-family: "Muli", sans-serif;
-  width: 400px;
-  height: 100px;
+  width: 11em;
+  height: 2em;
   border: none;
   border-radius: 20px;
 }
 
 #play-again-button:hover {
   cursor: pointer;
+  box-shadow: 0 0 4px 4px yellow;
 }
 
 #explanation-section {
@@ -128,13 +135,35 @@ body {
 }
 
 #player-results {
+  /* min-height: 10em; */
   border: 2px dashed red;
 }
 
 #tie-text-child {
+  margin-top: -0.04em;
   text-align: center;
-  padding-bottom: 0.8em;
   color: yellow;
-  font-size: 3em;
+  font-size: 2.8em;
   font-style: italic;
+  /* Used for illustration */
+  border: 1px dashed teal;
+}
+
+#scoreboard-table {
+  margin: auto;
+}
+
+.tableHeader {
+  font-family: "Muli", sans-serif;
+  color: #ffffff;
+  font-size: 2em;
+  text-align: center;
+  width: 10em;
+}
+
+.tableRow {
+  font-family: "Muli", sans-serif;
+  color: #ffffff;
+  font-size: 4.5em;
+  text-align: center;
 }
