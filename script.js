@@ -7,7 +7,6 @@ document
   .getElementById("play-again-button")
   .addEventListener("click", playAgain);
 
-// Global variables
 let userNumber = 0;
 let computerNumber = 0;
 let tieNumber = 0;
@@ -20,60 +19,69 @@ document.getElementById("computer-win-total").innerHTML = computerWinTotal;
 document.getElementById("tie-total").innerHTML = tieTotal;
 
 function playerChoosesRock() {
-  let displayUserChoice = document.getElementById("player-results");
-  let playerRock = document.createElement("img");
-  playerRock.setAttribute("src", "media/rock.jpg");
-  playerRock.setAttribute("alt", "Rock");
-  playerRock.setAttribute("id", "user-choice");
+  let havePlayed = document.getElementById("user-choice");
+  if (havePlayed !== null) {
+    alert(
+      "You have already played the game.\nPlease press the Play Again button."
+    );
+  } else {
+    let displayUserChoice = document.getElementById("player-results");
+    let playerRock = document.createElement("img");
+    playerRock.setAttribute("src", "media/rock.jpg");
+    playerRock.setAttribute("alt", "Rock");
+    playerRock.setAttribute("id", "user-choice");
 
-  displayUserChoice.appendChild(playerRock);
+    displayUserChoice.appendChild(playerRock);
 
-  userNumber = 1;
+    userNumber = 1;
 
-  computerChoice();
-  whoWon();
-
-  // For debugging purposes : delete before submitting
-  console.log("player chose rock");
-  console.log(`the user number is ${userNumber}`);
+    computerChoice();
+    whoWon();
+  }
 }
 
 function playerChoosesPaper() {
-  let displayUserChoice = document.getElementById("player-results");
-  let playerPaper = document.createElement("img");
-  playerPaper.setAttribute("src", "media/paper.jpg");
-  playerPaper.setAttribute("alt", "Paper");
-  playerPaper.setAttribute("id", "user-choice");
+  let havePlayed = document.getElementById("user-choice");
+  if (havePlayed !== null) {
+    alert(
+      "You have already played the game.\nPlease press the Play Again button."
+    );
+  } else {
+    let displayUserChoice = document.getElementById("player-results");
+    let playerPaper = document.createElement("img");
+    playerPaper.setAttribute("src", "media/paper.jpg");
+    playerPaper.setAttribute("alt", "Paper");
+    playerPaper.setAttribute("id", "user-choice");
 
-  displayUserChoice.appendChild(playerPaper);
+    displayUserChoice.appendChild(playerPaper);
 
-  userNumber = 2;
+    userNumber = 2;
 
-  computerChoice();
-  whoWon();
-
-  // For debugging purposes : delete before submitting
-  console.log("player chose paper");
-  console.log(`the user number is ${userNumber}`);
+    computerChoice();
+    whoWon();
+  }
 }
 
 function playerChoosesScissors() {
-  let displayUserChoice = document.getElementById("player-results");
-  let playerScissors = document.createElement("img");
-  playerScissors.setAttribute("src", "media/scissors.jpg");
-  playerScissors.setAttribute("alt", "Scissors");
-  playerScissors.setAttribute("id", "user-choice");
+  let havePlayed = document.getElementById("user-choice");
+  if (havePlayed !== null) {
+    alert(
+      "You have already played the game.\nPlease press the Play Again button."
+    );
+  } else {
+    let displayUserChoice = document.getElementById("player-results");
+    let playerScissors = document.createElement("img");
+    playerScissors.setAttribute("src", "media/scissors.jpg");
+    playerScissors.setAttribute("alt", "Scissors");
+    playerScissors.setAttribute("id", "user-choice");
 
-  displayUserChoice.appendChild(playerScissors);
+    displayUserChoice.appendChild(playerScissors);
 
-  userNumber = 3;
+    userNumber = 3;
 
-  computerChoice();
-  whoWon();
-
-  // For debugging purposes : delete before submitting
-  console.log("player chose scissors");
-  console.log(`the user number is ${userNumber}`);
+    computerChoice();
+    whoWon();
+  }
 }
 
 function computerChoosesRock() {
@@ -84,9 +92,6 @@ function computerChoosesRock() {
   computerRock.setAttribute("id", "computer-choice");
 
   displayComputerChoice.appendChild(computerRock);
-
-  // For debugging purposes : delete before submitting
-  console.log("computer chose rock");
 }
 
 function computerChoosesPaper() {
@@ -97,9 +102,6 @@ function computerChoosesPaper() {
   computerPaper.setAttribute("id", "computer-choice");
 
   displayComputerChoice.appendChild(computerPaper);
-
-  // For debugging purposes : delete before submitting
-  console.log("computer chose paper");
 }
 
 function computerChoosesScissors() {
@@ -110,9 +112,6 @@ function computerChoosesScissors() {
   computerScissors.setAttribute("id", "computer-choice");
 
   displayUserChoice.appendChild(computerScissors);
-
-  // For debugging purposes : delete before submitting
-  console.log("computer chose scissors");
 }
 
 function computerChoice() {
@@ -124,8 +123,6 @@ function computerChoice() {
   } else if (computerNumber === 3) {
     computerChoosesScissors();
   }
-  // For debugging purposes : delete before submitting
-  console.log(`the computer number is ${computerNumber}`);
 }
 
 function playAgain() {
@@ -144,8 +141,6 @@ function playAgain() {
   if (tieTextChild !== null) {
     tieTextParent.removeChild(tieTextChild);
   }
-  // Used for debugging : remove before submitting
-  console.clear();
 }
 
 function whoWon() {
@@ -182,16 +177,3 @@ function whoWon() {
     document.getElementById("tie-total").innerHTML = tieTotal;
   }
 }
-
-/* Post Image Links
-Rock : https://i.postimg.cc/wxSJXHSk/rock.jpg
-
-Paper
-https://i.postimg.cc/KcKB34sz/paper.jpg
-
-Scissors
-https://i.postimg.cc/9z5WrLgG/scissors.jpg
-
-explanation
-https://i.postimg.cc/d1g7jmS0/explanation.png
-*/

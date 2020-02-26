@@ -14,7 +14,9 @@ Click [here](https://cheddrs.github.io/rps_game/) to view it.
 
 ## Summary
 
-[complete summary]
+Wow, just wow! This is the most exciting project I have completed to date. I really felt llike all the stuff I have been learning really came together on this project and I was able to spend most of my time actually writing code and less time researching and learning.
+
+It truly has been a joy to work on this project.
 
 ## Languages Used
 

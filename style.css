@@ -87,8 +87,6 @@ body {
   align-self: center;
   font-size: 2em;
   color: #ffffff;
-  /* Used for illustration */
-  border: 2px dashed yellow;
 }
 
 #player-results {
@@ -130,23 +128,12 @@ body {
   border-radius: 20px;
 }
 
-#player-results-text {
-  border: 2px dashed yellow;
-}
-
-#player-results {
-  /* min-height: 10em; */
-  border: 2px dashed red;
-}
-
 #tie-text-child {
   margin-top: -0.04em;
   text-align: center;
   color: yellow;
   font-size: 2.8em;
   font-style: italic;
-  /* Used for illustration */
-  border: 1px dashed teal;
 }
 
 #scoreboard-table {
