@@ -8,8 +8,6 @@ Click [here](https://cheddrs.github.io/rps_game/) to view it.
 
 <image src="media/html.svg" width="55">&nbsp; &nbsp; <image src="media/css.svg" width="55">&nbsp; &nbsp; <image src="media/js.svg" width="55">
 
-<br>
-
 ## Summary
 
 <image src="media/readme_screenshot.png">
