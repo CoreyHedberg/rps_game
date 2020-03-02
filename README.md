@@ -18,4 +18,4 @@ It truly has been a joy to complete this project.
 
 ## Author
 
-**Corey Hedberg** | _Software Developer_ | [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
+**Corey Hedberg** &bull; _Software Developer_ &bull; [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
