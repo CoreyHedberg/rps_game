@@ -2,7 +2,7 @@
 
 Play the classic game where you have a 33.333333333(you get the point)% chance to win every time.
 
-Click [here](https://cheddrs.github.io/rps_game/) to view it.
+Click [here](https://coreyhedberg.github.io/rps_game/) to play it.
 
 ## Languages Used
 
