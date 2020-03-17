@@ -1,14 +1,10 @@
-document.getElementById("rock").addEventListener("click", playerChoosesRock);
-document.getElementById("paper").addEventListener("click", playerChoosesPaper);
-document
-  .getElementById("scissors")
-  .addEventListener("click", playerChoosesScissors);
+document.getElementById("rock").addEventListener("click", playerChoice);
+document.getElementById("paper").addEventListener("click", playerChoice);
+document.getElementById("scissors").addEventListener("click", playerChoice);
 document
   .getElementById("play-again-button")
   .addEventListener("click", playAgain);
 
-let userNumber = 0;
-let computerNumber = 0;
 let tieNumber = 0;
 var userWinTotal = 0;
 var computerWinTotal = 0;
@@ -18,7 +14,7 @@ document.getElementById("user-win-total").innerHTML = userWinTotal;
 document.getElementById("computer-win-total").innerHTML = computerWinTotal;
 document.getElementById("tie-total").innerHTML = tieTotal;
 
-function playerChoosesRock() {
+function playerChoice(e) {
   let havePlayed = document.getElementById("user-choice");
   if (havePlayed !== null) {
     alert(
@@ -26,102 +22,46 @@ function playerChoosesRock() {
     );
   } else {
     let displayUserChoice = document.getElementById("player-results");
-    let playerRock = document.createElement("img");
-    playerRock.setAttribute("src", "media/rock.jpg");
-    playerRock.setAttribute("alt", "Rock");
-    playerRock.setAttribute("id", "user-choice");
+    let playerImage = document.createElement("img");
+    playerImage.setAttribute("src", e.target.src);
+    playerImage.setAttribute("alt", e.target.alt);
+    playerImage.setAttribute("id", "user-choice");
 
-    displayUserChoice.appendChild(playerRock);
+    displayUserChoice.appendChild(playerImage);
 
-    userNumber = 1;
-
-    computerChoice();
-    whoWon();
+    const computerChoice = getComputerChoice();
+    displayComputerChoice(computerChoice);
+    whoWon(e.target.alt, computerChoice.alt);
   }
 }
 
-function playerChoosesPaper() {
-  let havePlayed = document.getElementById("user-choice");
-  if (havePlayed !== null) {
-    alert(
-      "You have already played the game.\nPlease press the Play Again button."
-    );
-  } else {
-    let displayUserChoice = document.getElementById("player-results");
-    let playerPaper = document.createElement("img");
-    playerPaper.setAttribute("src", "media/paper.jpg");
-    playerPaper.setAttribute("alt", "Paper");
-    playerPaper.setAttribute("id", "user-choice");
-
-    displayUserChoice.appendChild(playerPaper);
-
-    userNumber = 2;
-
-    computerChoice();
-    whoWon();
-  }
-}
-
-function playerChoosesScissors() {
-  let havePlayed = document.getElementById("user-choice");
-  if (havePlayed !== null) {
-    alert(
-      "You have already played the game.\nPlease press the Play Again button."
-    );
-  } else {
-    let displayUserChoice = document.getElementById("player-results");
-    let playerScissors = document.createElement("img");
-    playerScissors.setAttribute("src", "media/scissors.jpg");
-    playerScissors.setAttribute("alt", "Scissors");
-    playerScissors.setAttribute("id", "user-choice");
-
-    displayUserChoice.appendChild(playerScissors);
-
-    userNumber = 3;
-
-    computerChoice();
-    whoWon();
-  }
-}
-
-function computerChoosesRock() {
+function displayComputerChoice(image) {
   let displayComputerChoice = document.getElementById("player-results");
   let computerRock = document.createElement("img");
-  computerRock.setAttribute("src", "media/rock.jpg");
-  computerRock.setAttribute("alt", "Rock");
+  computerRock.setAttribute("src", image.imageSrc);
+  computerRock.setAttribute("alt", image.alt);
   computerRock.setAttribute("id", "computer-choice");
 
   displayComputerChoice.appendChild(computerRock);
 }
 
-function computerChoosesPaper() {
-  let displayComputerChoice = document.getElementById("player-results");
-  let computerPaper = document.createElement("img");
-  computerPaper.setAttribute("src", "media/paper.jpg");
-  computerPaper.setAttribute("alt", "Paper");
-  computerPaper.setAttribute("id", "computer-choice");
-
-  displayComputerChoice.appendChild(computerPaper);
-}
-
-function computerChoosesScissors() {
-  let displayUserChoice = document.getElementById("player-results");
-  let computerScissors = document.createElement("img");
-  computerScissors.setAttribute("src", "media/scissors.jpg");
-  computerScissors.setAttribute("alt", "Scissors");
-  computerScissors.setAttribute("id", "computer-choice");
-
-  displayUserChoice.appendChild(computerScissors);
-}
-
-function computerChoice() {
+function getComputerChoice() {
   computerNumber = Math.floor(Math.random() * 3 + 1);
   if (computerNumber === 1) {
-    computerChoosesRock();
+    return {
+      alt: "Rock",
+      imageSrc: "media/rock.jpg"
+    };
   } else if (computerNumber === 2) {
-    computerChoosesPaper();
+    return {
+      alt: "Paper",
+      imageSrc: "media/paper.jpg"
+    };
   } else if (computerNumber === 3) {
-    computerChoosesScissors();
+    return {
+      alt: "Scissors",
+      imageSrc: "media/scissors.jpg"
+    };
   }
 }
 
@@ -143,30 +83,11 @@ function playAgain() {
   }
 }
 
-function whoWon() {
-  let userWins = document.getElementById("user-choice");
-  let computerWins = document.getElementById("computer-choice");
-  if (
-    (userNumber == 1 && computerNumber == 3) ||
-    (userNumber == 2 && computerNumber == 1) ||
-    (userNumber == 3 && computerNumber == 2)
-  ) {
-    userWins.style.boxShadow = "0 0 6px 6px yellow";
-    userWinTotal++;
-    document.getElementById("user-win-total").innerHTML = userWinTotal;
-  } else if (
-    (userNumber == 3 && computerNumber == 1) ||
-    (userNumber == 1 && computerNumber == 2) ||
-    (userNumber == 2 && computerNumber == 3)
-  ) {
-    computerWins.style.boxShadow = "0 0 6px 6px yellow";
-    computerWinTotal++;
-    document.getElementById("computer-win-total").innerHTML = computerWinTotal;
-  } else if (
-    (userNumber == 1 && computerNumber == 1) ||
-    (userNumber == 2 && computerNumber == 2) ||
-    (userNumber == 3 && computerNumber == 3)
-  ) {
+function whoWon(playerAltTag, computerAltTag) {
+  console.log(playerAltTag);
+  console.log(computerAltTag);
+
+  if (playerAltTag === computerAltTag) {
     let displayTieText = document.getElementById("tie-text-parent");
     let tieTextElement = document.createElement("p");
     tieTextElement.setAttribute("id", "tie-text-child");
@@ -175,5 +96,22 @@ function whoWon() {
     tieTextElement.appendChild(tieText);
     tieTotal++;
     document.getElementById("tie-total").innerHTML = tieTotal;
+    return;
+  }
+
+  if (
+    (playerAltTag === "Rock" && computerAltTag === "Scissors") ||
+    (playerAltTag === "Scissors" && computerAltTag === "Paper") ||
+    (playerAltTag === "Paper" && computerAltTag === "Rock")
+  ) {
+    let userWins = document.getElementById("user-choice");
+    userWins.style.boxShadow = "0 0 6px 6px yellow";
+    userWinTotal++;
+    document.getElementById("user-win-total").innerHTML = userWinTotal;
+  } else {
+    let computerWins = document.getElementById("computer-choice");
+    computerWins.style.boxShadow = "0 0 6px 6px yellow";
+    computerWinTotal++;
+    document.getElementById("computer-win-total").innerHTML = computerWinTotal;
   }
 }
