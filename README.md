@@ -6,11 +6,11 @@ Click [here](https://coreyhedberg.github.io/rps_game/) to play it.
 
 ## Languages Used
 
-<image src="media/html.svg" width="55">&nbsp; &nbsp; <image src="media/css.svg" width="55">&nbsp; &nbsp; <image src="media/js.svg" width="55">
+<image src="readme_files/html.svg" width="55">&nbsp; &nbsp; <image src="readme_files/css.svg" width="55">&nbsp; &nbsp; <image src="readme_files/js.svg" width="55">
 
 ## Summary
 
-<image src="media/readme_screenshot.png">
+<image src="readme_files/readme_gif.gif">
 
 Wow, just wow! This is the most exciting project I have completed to date. I felt like all the stuff I have been learning really came together on this project and I was able to spend most of my time actually writing code and less time researching and studying. What a great feeling!
 
