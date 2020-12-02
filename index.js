@@ -9,6 +9,7 @@ let tieNumber = 0
 let userWinTotal = 0
 let computerWinTotal = 0
 let tieTotal = 0
+const WINPCT = document.getElementById("win-pct")
 
 document.getElementById("user-win-total").innerHTML = userWinTotal
 document.getElementById("computer-win-total").innerHTML = computerWinTotal
@@ -84,9 +85,6 @@ function playAgain() {
 }
 
 function whoWon(playerAltTag, computerAltTag) {
-  console.log(playerAltTag)
-  console.log(computerAltTag)
-
   if (playerAltTag === computerAltTag) {
     let displayTieText = document.getElementById("tie-text-parent")
     let tieTextElement = document.createElement("p")
@@ -114,4 +112,12 @@ function whoWon(playerAltTag, computerAltTag) {
     computerWinTotal++
     document.getElementById("computer-win-total").innerHTML = computerWinTotal
   }
+
+  let winPercentage =
+    ((userWinTotal + 0.5 * tieTotal) /
+      (userWinTotal + computerWinTotal + tieTotal)) *
+    100
+  console.log({ winPercentage })
+  console.log(`fired`)
+  WINPCT.innerHTML = winPercentage.toFixed(2) + "%"
 }
