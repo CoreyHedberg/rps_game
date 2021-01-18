@@ -140,6 +140,10 @@ body {
   margin: auto;
 }
 
+#scoreboard-section {
+  height: 21em;
+}
+
 .tableHeader {
   font-family: "Muli", sans-serif;
   color: #ffffff;
