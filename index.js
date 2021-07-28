@@ -115,3 +115,5 @@ function whoWon(playerAltTag, computerAltTag) {
     document.getElementById("computer-win-total").innerHTML = computerWinTotal
   }
 }
+
+TODO: Add setTimeout to whoWon function to restart the game automatically.
