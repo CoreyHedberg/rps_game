@@ -15,34 +15,36 @@ document.getElementById("computer-win-total").innerHTML = computerWinTotal
 document.getElementById("tie-total").innerHTML = tieTotal
 
 function playerChoice(e) {
-  let havePlayed = document.getElementById("user-choice")
-  if (havePlayed !== null) {
+  const HAVE_PLAYED = document.getElementById("user-choice")
+  if (HAVE_PLAYED !== null) {
     alert(
-      "You have already played the game.\nPlease press the Play Again button."
+      `You have already played the game.
+      Please press the Play Again button.`
     )
   } else {
-    let displayUserChoice = document.getElementById("player-results")
+    const DISPLAY_USER_CHOICE = document.getElementById("player-results")
     let playerImage = document.createElement("img")
     playerImage.setAttribute("src", e.target.src)
     playerImage.setAttribute("alt", e.target.alt)
     playerImage.setAttribute("id", "user-choice")
 
-    displayUserChoice.appendChild(playerImage)
+    DISPLAY_USER_CHOICE.appendChild(playerImage)
 
-    const computerChoice = getComputerChoice()
-    displayComputerChoice(computerChoice)
-    whoWon(e.target.alt, computerChoice.alt)
+    const COMPUTER_CHOICE = getComputerChoice()
+    displayComputerChoice(COMPUTER_CHOICE)
+    whoWon(e.target.alt, COMPUTER_CHOICE.alt)
   }
+  // setTimeout(playAgain(), 30000000)
 }
 
 function displayComputerChoice(image) {
-  let displayComputerChoice = document.getElementById("player-results")
+  const DISPLAY_COMPUTER_CHOICE = document.getElementById("player-results")
   let computerRock = document.createElement("img")
   computerRock.setAttribute("src", image.imageSrc)
   computerRock.setAttribute("alt", image.alt)
   computerRock.setAttribute("id", "computer-choice")
 
-  displayComputerChoice.appendChild(computerRock)
+  DISPLAY_COMPUTER_CHOICE.appendChild(computerRock)
 }
 
 function getComputerChoice() {
@@ -84,8 +86,8 @@ function playAgain() {
 }
 
 function whoWon(playerAltTag, computerAltTag) {
-  console.log(playerAltTag)
-  console.log(computerAltTag)
+  console.log(`Player: ${playerAltTag}`)
+  console.log(`Computer: ${computerAltTag}`)
 
   if (playerAltTag === computerAltTag) {
     let displayTieText = document.getElementById("tie-text-parent")
@@ -116,4 +118,4 @@ function whoWon(playerAltTag, computerAltTag) {
   }
 }
 
-TODO: Add setTimeout to whoWon function to restart the game automatically.
+// TODO: Add setTimeout to whoWon function to restart the game automatically.
