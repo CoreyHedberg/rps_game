@@ -15,26 +15,18 @@ document.getElementById("computer-win-total").innerHTML = computerWinTotal
 document.getElementById("tie-total").innerHTML = tieTotal
 
 function playerChoice(e) {
-  const HAVE_PLAYED = document.getElementById("user-choice")
-  if (HAVE_PLAYED !== null) {
-    alert(
-      `You have already played the game.
-      Please press the Play Again button.`
-    )
-  } else {
-    const DISPLAY_USER_CHOICE = document.getElementById("player-results")
-    let playerImage = document.createElement("img")
-    playerImage.setAttribute("src", e.target.src)
-    playerImage.setAttribute("alt", e.target.alt)
-    playerImage.setAttribute("id", "user-choice")
+  playAgain()
+  const DISPLAY_USER_CHOICE = document.getElementById("player-results")
+  let playerImage = document.createElement("img")
+  playerImage.setAttribute("src", e.target.src)
+  playerImage.setAttribute("alt", e.target.alt)
+  playerImage.setAttribute("id", "user-choice")
 
-    DISPLAY_USER_CHOICE.appendChild(playerImage)
+  DISPLAY_USER_CHOICE.appendChild(playerImage)
 
-    const COMPUTER_CHOICE = getComputerChoice()
-    displayComputerChoice(COMPUTER_CHOICE)
-    whoWon(e.target.alt, COMPUTER_CHOICE.alt)
-  }
-  // setTimeout(playAgain(), 30000000)
+  const COMPUTER_CHOICE = getComputerChoice()
+  displayComputerChoice(COMPUTER_CHOICE)
+  whoWon(e.target.alt, COMPUTER_CHOICE.alt)
 }
 
 function displayComputerChoice(image) {
@@ -68,27 +60,24 @@ function getComputerChoice() {
 }
 
 function playAgain() {
-  let parentUserRemove = document.getElementById("player-results")
-  let childUserRemove = document.getElementById("user-choice")
-  let parentComputerRemove = document.getElementById("player-results")
-  let childComputerRemove = document.getElementById("computer-choice")
-  let tieTextParent = document.getElementById("tie-text-parent")
-  let tieTextChild = document.getElementById("tie-text-child")
-  if (childUserRemove === null) {
+  const PARENT_USER_REMOVE = document.getElementById("player-results")
+  const CHILD_USER_REMOVE = document.getElementById("user-choice")
+  const PARENT_COMPUTER_REMOVE = document.getElementById("player-results")
+  const CHILD_COMPUTER_REMOVE = document.getElementById("computer-choice")
+  const TIE_TEXT_PARENT = document.getElementById("tie-text-parent")
+  const TIE_TEXT_CHILD = document.getElementById("tie-text-child")
+  if (CHILD_USER_REMOVE === null) {
     alert("Please play the game first.")
   } else {
-    parentUserRemove.removeChild(childUserRemove)
-    parentComputerRemove.removeChild(childComputerRemove)
+    PARENT_USER_REMOVE.removeChild(CHILD_USER_REMOVE)
+    PARENT_COMPUTER_REMOVE.removeChild(CHILD_COMPUTER_REMOVE)
   }
-  if (tieTextChild !== null) {
-    tieTextParent.removeChild(tieTextChild)
+  if (TIE_TEXT_CHILD !== null) {
+    TIE_TEXT_PARENT.removeChild(TIE_TEXT_CHILD)
   }
 }
 
 function whoWon(playerAltTag, computerAltTag) {
-  console.log(`Player: ${playerAltTag}`)
-  console.log(`Computer: ${computerAltTag}`)
-
   if (playerAltTag === computerAltTag) {
     let displayTieText = document.getElementById("tie-text-parent")
     let tieTextElement = document.createElement("p")
@@ -117,5 +106,3 @@ function whoWon(playerAltTag, computerAltTag) {
     document.getElementById("computer-win-total").innerHTML = computerWinTotal
   }
 }
-
-// TODO: Add setTimeout to whoWon function to restart the game automatically.
